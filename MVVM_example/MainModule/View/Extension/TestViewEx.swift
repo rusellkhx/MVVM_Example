@@ -8,6 +8,7 @@
 import UIKit
 
 extension TestView {
+    
     func makeImageView() -> UIImageView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -19,8 +20,9 @@ extension TestView {
     }
     
     func makeActivityIndicatorView() -> UIActivityIndicatorView {
-        let activityIndicator = UIActivityIndicatorView(style: .large)
-        activityIndicator.color = .gray
+        
+        let activityIndicator = typeIndicator()
+        activityIndicator.color = .red
         activityIndicator.hidesWhenStopped = true
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         addSubview(activityIndicator)
@@ -56,5 +58,14 @@ extension TestView {
         addSubview(label)
         return label
     }
-
+    
+    func typeIndicator() -> UIActivityIndicatorView {
+        if #available(iOS 13.0, *) {
+            let activityIndicator = UIActivityIndicatorView(style: .medium)
+            return activityIndicator
+        } else {
+            let activityIndicator = UIActivityIndicatorView(style: .gray)
+            return activityIndicator
+        }
+    }
 }

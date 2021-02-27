@@ -15,5 +15,5 @@ class ModuleBuilder: Builder {
     static func createMainModule() -> UIViewController {
         let view = MainViewController()
         return view
-}
+    }
 }

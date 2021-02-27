@@ -6,31 +6,39 @@
 //
 
 import UIKit
+import Swinject
+import SwinjectStoryboard
 
+@available(iOS 12.0, *)
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
+    
+    var window: UIWindow?
+    var container = Container()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        self.registerDependencies()
+        self.injectDependencies()
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.makeKeyAndVisible()
+        self.window = window
+        
+        let swinjectStoryboard = SwinjectStoryboard.create(name: "Main", bundle: nil, container: self.container)
+        window.rootViewController = swinjectStoryboard.instantiateInitialViewController()
         return true
     }
-
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    
+    private func registerDependencies() {
+        self.container.register(MainViewModelProtocol.self, factory: { resolver in
+            return MainViewModel()
+        })
     }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    
+    private func injectDependencies() {
+        self.container.storyboardInitCompleted(MainViewController.self) { (resolver, viewController) in
+            viewController.viewModel = resolver.resolve(MainViewModelProtocol.self)
+        }
     }
-
-
 }
 
