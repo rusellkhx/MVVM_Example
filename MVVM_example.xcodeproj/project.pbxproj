@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		42069AD825EA781000031F8F /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42069AD725EA781000031F8F /* Builder.swift */; };
+		42069AE225EA7DD900031F8F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 42069AE125EA7DD900031F8F /* .gitignore */; };
 		422B490A25E92CBB00063494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422B490925E92CBB00063494 /* AppDelegate.swift */; };
 		422B490C25E92CBB00063494 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422B490B25E92CBB00063494 /* SceneDelegate.swift */; };
 		422B490E25E92CBB00063494 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422B490D25E92CBB00063494 /* MainViewController.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		027B46C2D34D23954AEB3F05 /* Pods_MVVM_example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVM_example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42069AD725EA781000031F8F /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		42069AE125EA7DD900031F8F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		422B490625E92CBB00063494 /* MVVM_example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM_example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		422B490925E92CBB00063494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		422B490B25E92CBB00063494 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		422B48FD25E92CBB00063494 = {
 			isa = PBXGroup;
 			children = (
+				42069AE125EA7DD900031F8F /* .gitignore */,
 				422B490825E92CBB00063494 /* MVVM_example */,
 				422B490725E92CBB00063494 /* Products */,
 				74E9627C6F9A35AD58338AED /* Pods */,
@@ -151,7 +154,6 @@
 				4D5BA1612A1051100BF0FABB /* Pods-MVVM_example.debug.xcconfig */,
 				958B0ACAE21546DC8748B68A /* Pods-MVVM_example.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -214,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42069AE225EA7DD900031F8F /* .gitignore in Resources */,
 				422B491625E92CBD00063494 /* LaunchScreen.storyboard in Resources */,
 				422B491325E92CBD00063494 /* Assets.xcassets in Resources */,
 				422B491125E92CBB00063494 /* Main.storyboard in Resources */,
